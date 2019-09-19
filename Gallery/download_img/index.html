@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Добавить фото</title>
+    <meta name="description" content="Добавить фото в галерею Территория РИТМА" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="toplink">
+        <a href="../../index.php">Главная</a>
+        <a href="../../pages/pageGallery.php">Галерея</a></div>
+    <form id="upload" method="post" action="upload.php" enctype="multipart/form-data">
+        <div id="drop">
+            <h2>можно перетащить</h2>
+            <a>Найти</a>
+            <input type="file" name="upl" multiple />
+        </div>
+        <ul>
+        </ul>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="assets/js/jquery.knob.js"></script>
+    <!-- jQuery File Upload Dependencies -->
+    <script src="assets/js/jquery.ui.widget.js"></script>
+    <script src="assets/js/jquery.iframe-transport.js"></script>
+    <script src="assets/js/jquery.fileupload.js"></script>
+    <!-- Our main JS file -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

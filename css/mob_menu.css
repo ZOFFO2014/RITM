@@ -1,0 +1,359 @@
+/*Меню*/
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.topnav ul {
+    list-style: none;
+
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+
+.topnav ul li {
+    display: inline-flex;
+}
+
+.topnav a {
+    outline: none;
+    display: inline-block;
+    color: #000;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    padding: 20px 10px;
+}
+
+.topnav a:hover {
+
+    color: #3971dc;
+}
+
+
+
+.topnav a:after {
+    margin-top: 5px;
+    background-color: #3971dc;
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0%;
+    left: 50%;
+    position: absolute;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.topnav a:hover:after,
+.topnav a:focus:after {
+    width: 100%;
+}
+
+.button-mob-menu {
+    display: none;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 20px;
+    right: 2%;
+    z-index: 10;
+    transition: 0.35s ease-in-out;
+}
+
+
+.button-mob-menu input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    /* hide input */
+    z-index: 1;
+    /* top of the menu */
+}
+
+.button-mob-menu span {
+    display: block;
+    width: 100%;
+    height: 6px;
+    margin-bottom: 10px;
+    /*  background: #e8e8e8; */
+    background-color: #648be2;
+    border-radius: 2px;
+    transition: all 0.5s ease-in-out;
+}
+
+#span1 {
+    transform-origin: 4px 0px;
+}
+
+#span3 {
+    transform-origin: 3px 0px;
+}
+
+.button-mob-menu input:checked~#span1 {
+    background-color: #648be2;
+    transform: rotate(45deg) translate(9px);
+}
+
+.button-mob-menu input:checked~#span2 {
+    background-color: #648be2;
+    transform: rotate(495deg) translate(2px);
+}
+
+.button-mob-menu input:checked~#span3 {
+    background-color: #648be2;
+    transform: rotate(-45deg);
+    opacity: 0;
+}
+
+
+
+/*Кнопка возврата в хедер*/
+.ReturnTop {
+    width: 100px;
+    border: 1px solid #ccc;
+    background: #f7f7f7;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    bottom: 10px;
+    /* отступ кнопки от нижнего края страницы*/
+    right: 10px;
+    cursor: pointer;
+    display: none;
+    color: #333;
+    font-size: 11px;
+    z-index: 1100;
+}
+
+/*Кнопка возврата в хедер*/
+
+@media screen and (max-width:1200px) {
+    .bg-col-phone img {
+        top: 87px;
+        right: -2%;
+    }
+
+    .about-our-team h1 {
+        font-size: calc(2rem + 1vw);
+    }
+
+}
+
+@media screen and (max-width:992px) {
+    .ScrollMenuNone {
+        overflow-y: hidden;
+    }
+
+    .topnav {
+        z-index: 4;
+        position: fixed;
+        right: -260px;
+        margin: 0;
+        height: 100%;
+        width: 260px;
+        background: #2b384a;
+        opacity: 0.94;
+        transition: 0.35s ease-in-out;
+    }
+
+    .topnav-slide {
+        right: 0;
+    }
+
+    .button-mob-menu-slide {
+        top: 30px;
+        right: 1%;
+    }
+
+    .topnav ul {
+        /*display: none;*/
+        flex-direction: column;
+        margin-top: 70px;
+        padding: 0;
+    }
+
+    .topnav ul li {
+        padding: 0 0 0 0;
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #2949a0;
+        text-align: center;
+        transition: all 0.3s;
+    }
+
+    .topnav ul li:hover {
+        background: #2c3f84;
+    }
+
+
+    .topnav ul li a:hover {
+        animation: paddingLIA 0.4s ease-in-out;
+
+    }
+
+    @keyframes paddingLIA {
+        0% {
+            padding-right: 10px;
+        }
+
+        100% {
+            padding-right: 0;
+        }
+    }
+
+    .topnav ul li a {
+        padding: 15px 0;
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        color: #fff;
+    }
+
+    .topnav ul li a::before,
+    .topnav ul li a::after {
+        bottom: -2px;
+    }
+
+    .button-mob-menu {
+        display: block;
+    }
+
+    .bg-col-phone {
+        display: none;
+    }
+
+    /*Overley mobile menu*/
+    .modal-all {
+        visibility: hidden;
+        opacity: 0;
+        background: rgba(0, 0, 0, 0.45);
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        transition: all 0.35s ease-in-out;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        z-index: 9;
+    }
+
+    .modal-all-active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /*Overley mobile menu*/
+
+
+}
+
+@media screen and (max-width:768px) {
+    .topnav {
+        width: 100%;
+    }
+
+    .topnav ul {
+        margin-top: 30vh;
+    }
+}
+
+
+
+@media screen and (max-height: 480px) {
+
+
+    /* .topnav ul {
+        margin-top: 45px;
+    } */
+}
+
+
+
+@media screen and (max-width:576px) {
+
+    .logo:after {
+        top: 12px;
+    }
+
+    .top_menu,
+    .right_top__menu {
+        height: 85px;
+    }
+
+
+
+
+
+    .button-mob-menu {
+        right: 5%;
+    }
+
+
+
+    .topnav-slide {
+        right: 0;
+    }
+
+    .button-mob-menu-slide {
+        top: 30px;
+        right: 4%;
+    }
+
+    .about-our-team p:nth-child(1) {
+        text-align: center;
+    }
+
+    .about-our-team h1 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .about-our-team p:nth-last-of-type(1) {
+        text-align: center;
+    }
+
+    .about-our-team__buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (max-width:400px) {
+    .about-our-team h1 {
+        line-height: 50px;
+    }
+
+    .about-our-team__buttons {
+        margin-top: 45px;
+    }
+
+}
+
+
+@media screen and (max-width: 320px) {
+
+
+    .participation a {
+        font-size: 14px;
+        padding: 10px 10px;
+    }
+}
+
+/*Меню*/
